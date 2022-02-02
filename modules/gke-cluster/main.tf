@@ -10,7 +10,6 @@ provider "kubernetes" {
 module "gke" {
   source             = "terraform-google-modules/kubernetes-engine/google//modules/beta-private-cluster"
   project_id         = var.project_id
-  network_project_id = var.network_project_id
   name               = var.cluster_name
   region             = var.region
   regional           = true
