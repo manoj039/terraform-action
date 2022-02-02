@@ -66,7 +66,7 @@ module "gke" {
       preemptible                 = false
       enable_integrity_monitoring = true
       enable_secure_boot          = true
-      tags                        = "direct-iap,hawkeye-${var.env}"
+      tags                        = "direct-iap"
       node_metadata               = "GKE_METADATA_SERVER"
     },
   ]
