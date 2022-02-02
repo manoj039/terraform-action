@@ -1,6 +1,12 @@
 project_id = "ace-ripsaw-311918"
 region     = "europe-west2"
 
+network           = "network-1"
+subnetnetwork     = "subnet-1"
+ip_range_pods     = "pod-subnet"
+ip_range_services = "service-subnet"
+
+
 /******************************************
    Env Networking Variables
  *****************************************/
