@@ -66,8 +66,18 @@ variable "cluster_autoscaling" {
       maximum       = number
     }))
   })
+  default = {
+    enabled             = true
+    autoscaling_profile = "BALANCED"
+    max_cpu_cores       = 0
+    min_cpu_cores       = 0
+    max_memory_gb       = 0
+    min_memory_gb       = 0
+    gpu_resources       = []
+  }
   description = "Cluster autoscaling configuration. See [more details](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#clusterautoscaling)"
 }
+
 
 variable "master_ip" {
   description = "(Beta) The IP range in CIDR notation to use for the hosted master network"
