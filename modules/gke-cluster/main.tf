@@ -86,7 +86,6 @@ module "gke" {
       default-pool = true,
       env          = var.env
       location     = var.region
-      ou           = "luminace"
     }
   }
 
@@ -95,7 +94,6 @@ module "gke" {
 
     default-pool = [
       "default-pool",
-      "hawkeye-${var.env}"
     ]
   }
 
@@ -103,13 +101,5 @@ module "gke" {
   cluster_resource_labels = {
     env      = var.env,
     location = var.region,
-    ou       = "luminace"
   }
-}
-
-resource "google_project_iam_member" "repo_gke_iam_binding" {
-  project  = var.devops_project_id
-  for_each = toset(["roles/storage.objectViewer"])
-  role     = each.key
-  member   = "serviceAccount:${var.gke_service_account}"
 }
