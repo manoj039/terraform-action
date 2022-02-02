@@ -5,7 +5,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket = "remote-tf-state"
+    bucket = "manoj-remote-tf-state"
     prefix = "terraform/state"
   }
 }
